@@ -81,7 +81,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Styling of favorites page| M | 3hrs| 0 | 0 |
 | Adding Search | M | 3hrs| 0 | 0 |
 | Adding styling animations| L | 6hrs| 0 | 0 |
-| Total | H | 33hrs| 0hrs | 0hrs |
+| Total |  | 33hrs| 0hrs | 0hrs |
 
 ## Additional Libraries
  Use this section to list all supporting libraries and thier role in the project such as Axios, ReactStrap, D3, etc. 
