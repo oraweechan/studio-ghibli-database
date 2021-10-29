@@ -6,7 +6,7 @@ A Studi Ghibli film database.
 
 ## Motivation
 
-For this project, I plan to create a Studio Ghibli database. All movie details will be populated using an API call. This database will showcase all films and individual film details. It will also have a feature to save favorite movies. The project is created using React's Link and Router. This project was created for practice on using React.
+For this project, I plan to create a Studio Ghibli database. All movie details will be populated using an API call. This database will showcase all films and individual film details. It will also have a feature to save favorite movies. The project is created using React's Link and Router. This project was created for practice using React.
 
 ## Screenshots
 
