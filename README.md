@@ -14,7 +14,7 @@ View in-app screenshots [TBD]().
 
 ## Installation
 
-To open the app, open the terminal window and go to the "StudioGhibli" directory and run `npm start`.
+To open the app, open the terminal window and go to the "studio-ghibli-database" directory and run `npm i` then `npm start`.
 
 ## How to use
 TBD
