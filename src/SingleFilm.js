@@ -1,30 +1,52 @@
-// import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
+
 
 function SingleFilm(props) {
-  console.log(props)
+    //   console.log(props.filmId)
+      const [film, setFilm] = useState({});
 
-//   const filmJSX = props.filmList.map((film, index) => {
-//     //   console.log(film)
-//       return (
-//         <div key={index}>
-//           <h3>{film.title}</h3>
-//           <img src={film.movie_banner} alt='' />
-//           <p>Directed by: {film.director}</p>
-//           <p>Produced by: {film.producer}</p>
-//           <p>{film.description}</p>
-  
-//         </div>
-//       );
-//   });
+    const makeAPICall = () => {
+        fetch(`https://ghibliapi.herokuapp.com/films/${props.filmId}`)
+        .then((res) => res.json())
+        .then((data) => {
+            // console.log(data)
+            setFilm(data);
+        });
+    };
+
+    useEffect(() => {
+        makeAPICall();
+      }, [props.filmId]);
 
 
-  return (
-    <div className="singleFilm">
-       <h1>Single Film</h1>
-       {/* {filmJSX} */}
-     
-    </div>
-  );
-  }
+      let filmJSX = "";
+      if (film.title) {
+        filmJSX = (
+          <div>
+            <h3>{film.title}</h3>
+            <img src={film.movie_banner} alt={film.title} />
+            <p>Directed by: {film.director}</p>
+            <p>Produced by: {film.producer}</p>
+            <p>{film.description}</p>
+            <button>Add to Favorites</button>
+          </div>
+        );
+      }
 
-export default SingleFilm;
+
+
+    
+
+    
+    
+      return (
+        <div className="singleFilm">
+           <h1>Single Film</h1>
+            {filmJSX}
+         
+        
+        </div>
+      );
+      }
+    
+    export default SingleFilm;

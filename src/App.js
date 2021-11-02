@@ -2,28 +2,18 @@ import Films from "./Films";
 import Header from "./Header";
 import { Route, Switch, Redirect } from "react-router-dom";
 import MyFavorites from "./MyFavorites";
-import React, { useEffect, useState } from "react";
 import SingleFilm from "./SingleFilm";
+import React, { useState } from "react";
 
 function App() {
-  const [filmList, setFilmList] = useState([]);
-  const [selectedFilm, setSelectedFilm] = useState([]);
-
-  const makeAPICall = () => {
-    fetch("https://ghibliapi.herokuapp.com/films")
-      .then((res) => res.json())
-      .then((json) => {
-        setFilmList(json);
-      });
-  };
-
-  useEffect(() => {
-    makeAPICall();
-  }, []);
+  const [selectedFilm, setSelectedFilm] = useState("");
 
   const handleFilmClick = (film) => {
-    setSelectedFilm(film);
-  };
+    // console.log(film)
+  setSelectedFilm(film);
+}
+
+
 
   return (
     <div className="App">
@@ -31,20 +21,14 @@ function App() {
       <Switch>
         <Route exact path="/">
           {" "}
-          <Films handleFilmClick={handleFilmClick} filmList={filmList} />{" "}
+          <Films handleFilmClick={handleFilmClick}/>{" "}
         </Route>
         <Route path="/homepage" exact render={() => <Redirect to="/" />} />
         <Route exact path="/myFavorites">
           {" "}
           <MyFavorites />{" "}
         </Route>
-        {/* <Route exact path = '/film/'> <SingleFilm filmList={filmList}/></Route> */}
-        <Route
-          path="/film/:filmTitle"
-          render={(routerProps) => (
-            <SingleFilm match={routerProps.match} film={selectedFilm} />
-          )}
-        />
+        <Route path='/film/:filmTitle' render={(routerProps) => <SingleFilm match={routerProps.match} filmId={selectedFilm}/>} />
       </Switch>
     </div>
   );
