@@ -1,27 +1,17 @@
-import React, { useEffect,useState } from "react";
-import SingleFilm from "./SingleFilm";
+import { Link } from "react-router-dom";
+// import SingleFilm from "./SingleFilm";
 
-function Films() {
-  const [filmList, setFilmList] = useState([]);
+function Films(props) {
+  console.log(props)
 
-  const makeAPICall = () => {
-    fetch('https://ghibliapi.herokuapp.com/films')
-      .then((res) => res.json())
-      .then((json) => {
-        setFilmList(json)
-      });
-  };
-
-  useEffect(() => {
-    makeAPICall();
-  }, []);
-
-  const filmListJSX = filmList.map((film) => {
+  const filmListJSX = props.filmList.map((film, index) => {
     // console.log(film)
     return (
-      <div>
+      <div key={index}>
         <h3>{film.title}</h3>
+        <Link to ={"/film/" + film.title} onClick={() => props.handleFilmClick(...film)}>
         <img src={film.image} alt='' />
+        </Link>
 
       </div>
     );
@@ -29,10 +19,10 @@ function Films() {
 
 
   return (
-    <div className="App">
-      <h1>hello world</h1>
+    <div className="filmList">
+      <h1>Film List</h1>
       {filmListJSX}
-      <SingleFilm films={filmList}/>
+      {/* <SingleFilm films={filmList}/> */}
     
     </div>
   );
