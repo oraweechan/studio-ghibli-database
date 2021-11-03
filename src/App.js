@@ -30,7 +30,7 @@ function App() {
   }, []);
 
   const handleFilmClick = (film) => {
-    // console.log(film)
+    console.log(film)
     setSelectedFilm(film);
   };
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 
 function SingleFilm(props) {
-    // console.log(props)
+    console.log(props)
   const [film, setFilm] = useState({});
 
   const makeAPICall = () => {
@@ -23,7 +23,7 @@ function SingleFilm(props) {
     filmJSX = (
       <div>
         <h3>{film.title}</h3>
-        <img src={film.movie_banner} alt={film.title} />
+        <img src={film.image} alt={film.title} />
         <p>Directed by: {film.director}</p>
         <p>Produced by: {film.producer}</p>
         <p>{film.description}</p>

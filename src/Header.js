@@ -10,7 +10,7 @@ function Header() {
       <>
 
       <Navbar bg="light" variant="light">
-    <Container>
+
     <Navbar.Brand href="/">Studio Ghibli</Navbar.Brand>
     <Nav className="me-auto">
      
@@ -21,7 +21,7 @@ function Header() {
     
 
     </Nav>
-    </Container>
+
   </Navbar>
  
   
