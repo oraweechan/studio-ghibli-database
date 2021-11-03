@@ -3,11 +3,31 @@ import Header from "./Header";
 import { Route, Switch, Redirect } from "react-router-dom";
 import MyFavorites from "./MyFavorites";
 import SingleFilm from "./SingleFilm";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Form from "./Form";
 
 function App() {
+  const [filmList, setFilmList] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
+
   const [selectedFilm, setSelectedFilm] = useState("");
   const [favoriteList, setFavoriteList] = useState([]);
+
+
+  const makeAPICall = () => {
+    fetch("https://ghibliapi.herokuapp.com/films")
+      .then((res) => res.json())
+      .then((json) => {
+        setFilmList(json);
+      });
+  };
+
+  useEffect(() => {
+    makeAPICall();
+  }, []);
+
 
   const handleFilmClick = (film) => {
     // console.log(film)
@@ -27,6 +47,22 @@ const removeFromFavorites = (removeIndex) => {
   setFavoriteList(newFavorites)
 }
 
+const searchHandler = (searchTerm) => {
+  // console.log(searchTerm)
+  setSearchTerm(searchTerm)
+  if (searchTerm !== ""){
+    const newFilmList = filmList.filter((film) => {
+      console.log(Object.values)
+      return Object.values(film).join("").toLowerCase().includes(searchTerm.toLowerCase());
+    })
+    setSearchResults(newFilmList);
+  } else {
+    setSearchResults(filmList);
+  }
+
+};
+
+
 
 
   return (
@@ -36,9 +72,11 @@ const removeFromFavorites = (removeIndex) => {
       <Switch>
         <Route exact path="/">
           {" "}
-          <Films handleFilmClick={handleFilmClick}/>{" "}
+          <Form term={searchTerm} searchKeyword={searchHandler} />
+          <Films filmList={searchTerm.length < 1 ? filmList : searchResults} handleFilmClick={handleFilmClick}/>{" "}
         </Route>
         <Route exact path="/homepage" render={() => <Redirect to="/" />} />
+        {/* <Route exact path="/" render={() => <Form term={searchTerm} searchKeyword={searchHandler} />} /> */}
         <Route exact path="/myFavorites" render={() => <MyFavorites removeFilm={removeFromFavorites} favorites={favoriteList} />} />
         <Route exact path='/film/:filmTitle' render={(routerProps) => <SingleFilm addToFavorites={addToFavorites} filmId={selectedFilm}/>} />
       </Switch>

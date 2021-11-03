@@ -1,28 +1,27 @@
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 
 function Form(props) {
-   
-    const getSearchTerm = () => {
-        // console.log(inputEl.current.value);
-        props.searchKeyword(inputEl.current.value);
-    };
-    const inputEl = useRef("");
+  const getSearchTerm = () => {
+    // console.log(inputEl.current.value);
+    props.searchKeyword(inputEl.current.value);
+  };
+  const inputEl = useRef("");
 
-     
-  
-    return (
-      <div className="searchForm">
-          <div className="icon input">
-              <input ref={inputEl} type="text" placeholder="Search Films" className="prompt" value={ props.term} onChange={getSearchTerm}/>
-              <i className="search icon"></i>
-
-
-          </div>
-       
-      
+  return (
+    <div className="searchForm">
+      <div className="icon input">
+        <input
+          ref={inputEl}
+          type="text"
+          placeholder="Search Films"
+          className="prompt"
+          value={props.term}
+          onChange={getSearchTerm}
+        />
+        <i className="search icon"></i>
       </div>
-    );
-  }
-  
-  export default Form;
-  
+    </div>
+  );
+}
+
+export default Form;
