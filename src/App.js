@@ -7,6 +7,7 @@ import React, { useState, useEffect } from "react";
 import Form from "./Form";
 import { Container } from "react-bootstrap";
 import { Row } from "react-bootstrap";
+import "./App.css"
 
 
 function App() {
