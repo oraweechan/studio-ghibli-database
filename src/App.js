@@ -7,7 +7,7 @@ import React, { useState, useEffect } from "react";
 import Form from "./Form";
 import { Container } from "react-bootstrap";
 import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
+
 
 function App() {
   const [filmList, setFilmList] = useState([]);
@@ -34,7 +34,7 @@ function App() {
   };
 
   const addToFavorites = (film) => {
-    console.log(film)
+    // console.log(film);
     setFavoriteList([...favoriteList, film]);
   };
 
@@ -66,41 +66,41 @@ function App() {
   return (
     <div className="App">
       <Container>
-       
-      
-      <Header />
-
-      <Switch>
-      
-
-        <Route exact path="/">
-          {" "}
-          <Form term={searchTerm} searchKeyword={searchHandler} />
-          <Films
-            filmList={searchTerm.length < 1 ? filmList : searchResults}
-            handleFilmClick={handleFilmClick}
-          />{" "}
-        </Route>
-        <Route exact path="/homepage" render={() => <Redirect to="/" />} />
-        {/* <Route exact path="/" render={() => <Form term={searchTerm} searchKeyword={searchHandler} />} /> */}
-        <Route
-          exact
-          path="/myFavorites"
-          render={() => (
-            <MyFavorites
-              removeFilm={removeFromFavorites}
-              favorites={favoriteList}
+        <Row>
+          <Header />
+          <Switch>
+            <Route exact path="/">
+              {" "}
+              <Form 
+                term={searchTerm} 
+                searchKeyword={searchHandler} />
+              <Films
+                filmList={searchTerm.length < 1 ? filmList : searchResults}
+                handleFilmClick={handleFilmClick}
+              />{" "}
+            </Route>
+            <Route
+              exact
+              path="/myFavorites"
+              render={() => (
+                <MyFavorites
+                  removeFilm={removeFromFavorites}
+                  favorites={favoriteList}
+                />
+              )}
             />
-          )}
-        />
-        <Route
-          exact
-          path="/film/:filmTitle"
-          render={() => (
-            <SingleFilm addToFavorites={addToFavorites} filmId={selectedFilm} />
-          )}
-        />
-      </Switch>
+            <Route
+              exact
+              path="/film/:filmTitle"
+              render={() => (
+                <SingleFilm
+                  addToFavorites={addToFavorites}
+                  filmId={selectedFilm}
+                />
+              )}
+            />
+          </Switch>
+        </Row>
       </Container>
     </div>
   );

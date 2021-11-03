@@ -8,7 +8,7 @@ function MyFavorites(props) {
         <p>{film.title}</p>
         <img src={film.image} alt={film.title} />
         <button onClick={() => props.removeFilm(index)}>Remove from Favorites</button>
-        
+
      </div>
     );
   });
@@ -16,7 +16,7 @@ function MyFavorites(props) {
     return (
       <div className="MyFavorites">
               {myFavoritesJSX}
-              hello
+              favorites
       </div>
     );
     }

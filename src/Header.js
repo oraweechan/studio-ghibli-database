@@ -13,10 +13,12 @@ function Header() {
     <Container>
     <Navbar.Brand href="/">Studio Ghibli</Navbar.Brand>
     <Nav className="me-auto">
-      <Nav.Link href="/">Home</Nav.Link>
+     
+      <Link className="nav-link" to="/">Home</Link>
+      <Link className="nav-link" to="/myFavorites">My Favorites</Link>
       
 
-      <Nav.Link href="/myFavorites">My Favorites</Nav.Link>
+    
 
     </Nav>
     </Container>

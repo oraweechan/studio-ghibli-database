@@ -8,6 +8,12 @@ function Form(props) {
   const inputEl = useRef("");
 
   return (
+      <>
+    <div className="banner">
+        <img src="https://res.cloudinary.com/orawee/image/upload/v1635965664/StudioGhibli/Screen_Shot_2021-11-03_at_11.52.20_AM_ycxuua.png"
+        alt=""/>
+
+    </div>
     <div className="searchForm">
       <div className="icon input">
         <input
@@ -21,6 +27,7 @@ function Form(props) {
         <i className="search icon"></i>
       </div>
     </div>
+    </>
   );
 }
 
