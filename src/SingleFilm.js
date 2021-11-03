@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import Button from "react-bootstrap/Button";
 
 function SingleFilm(props) {
-  //   console.log(props.filmId)
+    // console.log(props)
   const [film, setFilm] = useState({});
 
   const makeAPICall = () => {
@@ -26,7 +27,11 @@ function SingleFilm(props) {
         <p>Directed by: {film.director}</p>
         <p>Produced by: {film.producer}</p>
         <p>{film.description}</p>
-        <button onClick={() => props.addToFavorites(film)}>Add to Favorites</button>
+        {/* <button onClick={() => props.addToFavorites(film)}>Add to Favorites</button> */}
+        <Button
+        variant="primary"
+        onClick={() => props.addToFavorites(film)}
+        >Add to Favorites</Button>
       </div>
     );
   }
