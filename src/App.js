@@ -7,10 +7,24 @@ import React, { useState } from "react";
 
 function App() {
   const [selectedFilm, setSelectedFilm] = useState("");
+  const [favoriteList, setFavoriteList] = useState([]);
 
   const handleFilmClick = (film) => {
     // console.log(film)
   setSelectedFilm(film);
+}
+
+const addToFavorites = (film) => {
+  // console.log(film)
+  setFavoriteList([...favoriteList, film])
+}
+
+const removeFromFavorites = (removeIndex) => {
+  // console.log(removeIndex)
+  let newFavorites = favoriteList.filter((film, index) => {
+    return index !== removeIndex
+  })
+  setFavoriteList(newFavorites)
 }
 
 
@@ -23,12 +37,9 @@ function App() {
           {" "}
           <Films handleFilmClick={handleFilmClick}/>{" "}
         </Route>
-        <Route path="/homepage" exact render={() => <Redirect to="/" />} />
-        <Route exact path="/myFavorites">
-          {" "}
-          <MyFavorites />{" "}
-        </Route>
-        <Route path='/film/:filmTitle' render={(routerProps) => <SingleFilm match={routerProps.match} filmId={selectedFilm}/>} />
+        <Route exact path="/homepage" render={() => <Redirect to="/" />} />
+        <Route exact path="/myFavorites" render={() => <MyFavorites removeFilm={removeFromFavorites} favorites={favoriteList} />} />
+        <Route exact path='/film/:filmTitle' render={(routerProps) => <SingleFilm addToFavorites={addToFavorites} filmId={selectedFilm}/>} />
       </Switch>
     </div>
   );
