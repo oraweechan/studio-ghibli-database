@@ -32,6 +32,7 @@ const removeFromFavorites = (removeIndex) => {
   return (
     <div className="App">
       <Header />
+     
       <Switch>
         <Route exact path="/">
           {" "}
