@@ -1,4 +1,4 @@
-import React, { useRef,useState } from "react";
+import React, { useRef} from "react";
 import { Col } from "react-bootstrap";
 import { Image } from "react-bootstrap";
 
@@ -18,7 +18,7 @@ function Form(props) {
       </div>
       <div className="searchForm">
         <div className="icon input">
-          <form>
+          
           <input
             ref={inputEl}
             type="text"
@@ -28,12 +28,12 @@ function Form(props) {
             onChange={getSearchTerm}
             
           />
-          <button onClick={() => {props.handleClearClick({inputEl})}}>Reset
+          <button onClick={() => {props.handleClearClick({getSearchTerm})}}>Reset
           </button>
           
       
           {/* <input onClick={() => props.handleClearClick(e)} type="button" name="cancelSearch" value="cancel" ></input> */}
-          </form>
+          
         </div>
       </div>
     </Col>

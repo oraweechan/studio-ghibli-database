@@ -1,4 +1,3 @@
-import React, {  useState } from "react";
 import { Link } from "react-router-dom";
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
@@ -8,10 +7,11 @@ import InfoIcon from '@mui/icons-material/Info';
 import { Col } from "react-bootstrap";
 import { Image } from "react-bootstrap";
 
-export default function Films(props) {
+function Films(props) {
+  // console.log(props)
   return (
    <Col>
-   <div className="image-list1">
+   <div key="film-list1" className="film-list1">
     <ImageList cols={1} sx={{ width: 350, height: 500 }}>
       <ImageListItem key="Subheader" cols={1}>
        
@@ -20,7 +20,7 @@ export default function Films(props) {
 
         <Link to={"/film/" + film.title}>
 
-        <ImageListItem key={film.img}>
+        <ImageListItem key={film.id}>
 
         <Image 
         onClick={() => {props.handleFilmClick(film.id)}}
@@ -54,9 +54,9 @@ export default function Films(props) {
       ))}
     </ImageList>
     </div>
-    <div className="image-list2">
+    <div key="film-list2" className="film-list2">
     <ImageList cols={2} sx={{ width: 1200, height: 1000 }}>
-      <ImageListItem key="Subheader" cols={2} fluid>
+      <ImageListItem key="Subheader" cols={2} >
        
       </ImageListItem>
       {props.filmList.map((film) => (
@@ -71,6 +71,7 @@ export default function Films(props) {
             alt={film.title}
           />
           <ImageListItemBar
+            key=""
             title={film.title}
             subtitle= {film.director}
             actionIcon={
@@ -90,3 +91,5 @@ export default function Films(props) {
     </Col>
   );
 }
+
+export default Films;

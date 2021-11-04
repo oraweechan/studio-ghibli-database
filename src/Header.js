@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom"
 import { Navbar } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
-import { Col } from "react-bootstrap";
+
 function Header() {
 
   

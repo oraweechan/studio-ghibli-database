@@ -5,7 +5,7 @@ import { Image } from "react-bootstrap";
 
 
 function SingleFilm(props) {
-    console.log(props)
+    // console.log(props)
   const [film, setFilm] = useState({});
 
   const makeAPICall = () => {

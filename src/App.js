@@ -1,6 +1,6 @@
 import Films from "./Films";
 import Header from "./Header";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch} from "react-router-dom";
 import MyFavorites from "./MyFavorites";
 import SingleFilm from "./SingleFilm";
 import React, { useState, useEffect } from "react";
@@ -16,8 +16,9 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [selectedFilm, setSelectedFilm] = useState("");
   const [favoriteList, setFavoriteList] = useState([]);
+  const [clearInput, setClearInput] = useState("")
 
-  const makeAPICall = () => {
+  const makeAPICall =  () => {
     fetch("https://ghibliapi.herokuapp.com/films")
       .then((res) => res.json())
       .then((json) => {
@@ -27,16 +28,17 @@ function App() {
 
   useEffect(() => {
     makeAPICall();
-  }, []);
+  }, [clearInput]);
 
   const handleFilmClick = (film) => {
     // console.log(film)
     setSelectedFilm(film);
   };
 
-  const handleClearClick = (searchTerm) => {
-    console.log(searchTerm)
-    setSearchResults("")
+  const handleClearClick = () => {
+     setClearInput(0)
+     setSearchTerm("")
+    setSearchResults(filmList)
   }
 
   const addToFavorites = (film) => {
@@ -53,11 +55,11 @@ function App() {
   };
 
   const searchHandler = (searchTerm) => {
-    // console.log(searchTerm)
+    console.log(searchTerm)
     setSearchTerm(searchTerm);
     if (searchTerm !== "") {
       const newFilmList = filmList.filter((film) => {
-        // console.log(Object.values);
+        console.log(filmList.title);
         return Object.values(film)
           .join("")
           .toLowerCase()
@@ -68,6 +70,36 @@ function App() {
       setSearchResults(filmList);
     }
   };
+
+  // const searchHandler = (searchTerm) => {
+  //   // console.log(searchTerm)
+  //   setSearchTerm(searchTerm);
+  //   if (searchTerm === "") {
+  //     const newFilmList1 = filmList.filter((film) => {
+  //       // console.log(Object.values);
+  //       return Object.values(film)
+  //         ;
+  //     });
+  //     setSearchResults(newFilmList1);
+  //     }
+  //   else if (searchTerm !== "") {
+  //     const newFilmList = filmList.filter((film) => {
+  //       // console.log(Object.values);
+  //       return Object.values(film)
+  //         .join("")
+  //         .toLowerCase()
+  //         .includes(searchTerm.toLowerCase());
+  //     });
+  //     setSearchResults(newFilmList);
+  //   } else {
+  //         setSearchResults(filmList);
+  //       }
+  //     };
+
+
+
+
+
 
   return (
     <div className="App">

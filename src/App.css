@@ -12,14 +12,15 @@
 
 .banner, 
 .searchForm,
-.image-list1,
-.image-list2 {
+.film-list1,
+.film-list2 {
     display: flex;
     justify-content: center;
 }
 
 .favoritesList {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .filmDetails {
@@ -28,13 +29,13 @@
     flex-direction: column;
 }
 
-.AddtoFavoritesBtn {
+.addtoFavoritesBtn {
     justify-content: center;
     display: flex;
 
 }
 
-.image-list2 {
+.film-list2 {
     display: none;
 }
 
@@ -56,10 +57,10 @@
   
   /* Medium devices (tablets, 768px and up) */
   @media screen and (min-width: 768px) {
-    .image-list1 {
+    .film-list1 {
         display: none;
     }
-    .image-list2 {
+    .film-list2 {
         display: flex;
     }
     
