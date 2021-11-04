@@ -5,7 +5,7 @@ import MyFavorites from "./MyFavorites";
 import SingleFilm from "./SingleFilm";
 import React, { useState, useEffect } from "react";
 import Form from "./Form";
-import { Container } from "react-bootstrap";
+import { Col, Container } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import "./App.css"
 
@@ -30,9 +30,14 @@ function App() {
   }, []);
 
   const handleFilmClick = (film) => {
-    console.log(film)
+    // console.log(film)
     setSelectedFilm(film);
   };
+
+  const handleClearClick = (searchTerm) => {
+    console.log(searchTerm)
+    setSearchResults("")
+  }
 
   const addToFavorites = (film) => {
     // console.log(film);
@@ -68,11 +73,14 @@ function App() {
     <div className="App">
       <Container>
         <Row>
+         <Col>
           <Header />
+         
           <Switch>
             <Route exact path="/">
               {" "}
               <Form 
+                handleClearClick={handleClearClick}
                 term={searchTerm} 
                 searchKeyword={searchHandler} />
               <Films
@@ -101,6 +109,7 @@ function App() {
               )}
             />
           </Switch>
+          </Col>
         </Row>
       </Container>
     </div>

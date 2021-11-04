@@ -8,7 +8,7 @@ function Header() {
 
     return (
       
-    <Col>
+  
       <Navbar bg="light" variant="light">
         <Navbar.Brand to="/">Studio Ghibli</Navbar.Brand>
         <Nav className="me-auto">
@@ -16,7 +16,7 @@ function Header() {
           <Link className="nav-link" to="/myFavorites">My Favorites</Link>
         </Nav>
       </Navbar>
-    </Col>
+    
  
       
     );

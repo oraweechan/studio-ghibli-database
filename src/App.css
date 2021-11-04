@@ -9,13 +9,42 @@
 
 } */
 
+
 .banner, 
 .searchForm,
-.image-list {
+.image-list1,
+.image-list2 {
     display: flex;
     justify-content: center;
 }
 
+.favoritesList {
+    display: flex;
+}
+
+.filmDetails {
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+}
+
+.AddtoFavoritesBtn {
+    justify-content: center;
+    display: flex;
+
+}
+
+.image-list2 {
+    display: none;
+}
+
+.banner {
+    background-color: #1E9FD1;
+}
+
+.searchForm {
+    margin: 20px;
+}
 
 
 
@@ -27,6 +56,13 @@
   
   /* Medium devices (tablets, 768px and up) */
   @media screen and (min-width: 768px) {
+    .image-list1 {
+        display: none;
+    }
+    .image-list2 {
+        display: flex;
+    }
+    
     
   }
   
