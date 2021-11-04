@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/studio-ghibli-database/static/css/main.c75d7be0.chunk.css",
-    "main.js": "/studio-ghibli-database/static/js/main.cf488ffd.chunk.js",
-    "main.js.map": "/studio-ghibli-database/static/js/main.cf488ffd.chunk.js.map",
+    "main.css": "/studio-ghibli-database/static/css/main.d89dc2a0.chunk.css",
+    "main.js": "/studio-ghibli-database/static/js/main.ee47cbf5.chunk.js",
+    "main.js.map": "/studio-ghibli-database/static/js/main.ee47cbf5.chunk.js.map",
     "runtime-main.js": "/studio-ghibli-database/static/js/runtime-main.e8209e73.js",
     "runtime-main.js.map": "/studio-ghibli-database/static/js/runtime-main.e8209e73.js.map",
     "static/css/2.8c0e6b67.chunk.css": "/studio-ghibli-database/static/css/2.8c0e6b67.chunk.css",
-    "static/js/2.ebd1d743.chunk.js": "/studio-ghibli-database/static/js/2.ebd1d743.chunk.js",
-    "static/js/2.ebd1d743.chunk.js.map": "/studio-ghibli-database/static/js/2.ebd1d743.chunk.js.map",
+    "static/js/2.5b54dbfe.chunk.js": "/studio-ghibli-database/static/js/2.5b54dbfe.chunk.js",
+    "static/js/2.5b54dbfe.chunk.js.map": "/studio-ghibli-database/static/js/2.5b54dbfe.chunk.js.map",
     "index.html": "/studio-ghibli-database/index.html",
     "static/css/2.8c0e6b67.chunk.css.map": "/studio-ghibli-database/static/css/2.8c0e6b67.chunk.css.map",
-    "static/css/main.c75d7be0.chunk.css.map": "/studio-ghibli-database/static/css/main.c75d7be0.chunk.css.map",
-    "static/js/2.ebd1d743.chunk.js.LICENSE.txt": "/studio-ghibli-database/static/js/2.ebd1d743.chunk.js.LICENSE.txt"
+    "static/css/main.d89dc2a0.chunk.css.map": "/studio-ghibli-database/static/css/main.d89dc2a0.chunk.css.map",
+    "static/js/2.5b54dbfe.chunk.js.LICENSE.txt": "/studio-ghibli-database/static/js/2.5b54dbfe.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e8209e73.js",
     "static/css/2.8c0e6b67.chunk.css",
-    "static/js/2.ebd1d743.chunk.js",
-    "static/css/main.c75d7be0.chunk.css",
-    "static/js/main.cf488ffd.chunk.js"
+    "static/js/2.5b54dbfe.chunk.js",
+    "static/css/main.d89dc2a0.chunk.css",
+    "static/js/main.ee47cbf5.chunk.js"
   ]
 }

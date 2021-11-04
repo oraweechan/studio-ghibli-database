@@ -1,0 +1,2 @@
+.banner,.image-list1,.image-list2,.searchForm{display:flex;justify-content:center}.favoritesList{display:flex}.filmDetails{display:flex;align-self:center;flex-direction:column}.AddtoFavoritesBtn{justify-content:center;display:flex}.image-list2{display:none}.banner{background-color:#1e9fd1}.searchForm{margin:20px}@media screen and (min-width:768px){.image-list1{display:none}.image-list2{display:flex}}
+/*# sourceMappingURL=main.d89dc2a0.chunk.css.map */
