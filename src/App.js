@@ -1,14 +1,13 @@
 import Films from "./Films";
 import Header from "./Header";
-import { Route, Switch} from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import MyFavorites from "./MyFavorites";
 import SingleFilm from "./SingleFilm";
 import React, { useState, useEffect } from "react";
 import Form from "./Form";
 import { Col, Container } from "react-bootstrap";
 import { Row } from "react-bootstrap";
-import "./App.css"
-
+import "./App.css";
 
 function App() {
   const [filmList, setFilmList] = useState([]);
@@ -16,9 +15,9 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [selectedFilm, setSelectedFilm] = useState("");
   const [favoriteList, setFavoriteList] = useState([]);
-  const [clearInput, setClearInput] = useState("")
+  const [clearInput, setClearInput] = useState("");
 
-  const makeAPICall =  () => {
+  const makeAPICall = () => {
     fetch("https://ghibliapi.herokuapp.com/films")
       .then((res) => res.json())
       .then((json) => {
@@ -36,10 +35,10 @@ function App() {
   };
 
   const handleClearClick = () => {
-     setClearInput(0)
-     setSearchTerm("")
-    setSearchResults(filmList)
-  }
+    setClearInput(0);
+    setSearchTerm("");
+    setSearchResults(filmList);
+  };
 
   const addToFavorites = (film) => {
     // console.log(film);
@@ -55,11 +54,10 @@ function App() {
   };
 
   const searchHandler = (searchTerm) => {
-    console.log(searchTerm)
+    // console.log(searchTerm)
     setSearchTerm(searchTerm);
     if (searchTerm !== "") {
       const newFilmList = filmList.filter((film) => {
-        console.log(filmList.title);
         return Object.values(film)
           .join("")
           .toLowerCase()
@@ -71,76 +69,46 @@ function App() {
     }
   };
 
-  // const searchHandler = (searchTerm) => {
-  //   // console.log(searchTerm)
-  //   setSearchTerm(searchTerm);
-  //   if (searchTerm === "") {
-  //     const newFilmList1 = filmList.filter((film) => {
-  //       // console.log(Object.values);
-  //       return Object.values(film)
-  //         ;
-  //     });
-  //     setSearchResults(newFilmList1);
-  //     }
-  //   else if (searchTerm !== "") {
-  //     const newFilmList = filmList.filter((film) => {
-  //       // console.log(Object.values);
-  //       return Object.values(film)
-  //         .join("")
-  //         .toLowerCase()
-  //         .includes(searchTerm.toLowerCase());
-  //     });
-  //     setSearchResults(newFilmList);
-  //   } else {
-  //         setSearchResults(filmList);
-  //       }
-  //     };
-
-
-
-
-
-
   return (
     <div className="App">
       <Container>
         <Row>
-         <Col>
-          <Header />
-         
-          <Switch>
-            <Route exact path="/">
-              {" "}
-              <Form 
-                handleClearClick={handleClearClick}
-                term={searchTerm} 
-                searchKeyword={searchHandler} />
-              <Films
-                filmList={searchTerm.length < 1 ? filmList : searchResults}
-                handleFilmClick={handleFilmClick}
-              />{" "}
-            </Route>
-            <Route
-              exact
-              path="/myFavorites"
-              render={() => (
-                <MyFavorites
-                  removeFilm={removeFromFavorites}
-                  favorites={favoriteList}
+          <Col>
+            <Header />
+            <Switch>
+              <Route exact path="/">
+                {" "}
+                <Form
+                  handleClearClick={handleClearClick}
+                  term={searchTerm}
+                  searchKeyword={searchHandler}
                 />
-              )}
-            />
-            <Route
-              exact
-              path="/film/:filmTitle"
-              render={() => (
-                <SingleFilm
-                  addToFavorites={addToFavorites}
-                  filmId={selectedFilm}
-                />
-              )}
-            />
-          </Switch>
+                <Films
+                  filmList={searchTerm.length < 1 ? filmList : searchResults}
+                  handleFilmClick={handleFilmClick}
+                />{" "}
+              </Route>
+              <Route
+                exact
+                path="/myFavorites"
+                render={() => (
+                  <MyFavorites
+                    removeFilm={removeFromFavorites}
+                    favorites={favoriteList}
+                  />
+                )}
+              />
+              <Route
+                exact
+                path="/film/:filmTitle"
+                render={() => (
+                  <SingleFilm
+                    addToFavorites={addToFavorites}
+                    filmId={selectedFilm}
+                  />
+                )}
+              />
+            </Switch>
           </Col>
         </Row>
       </Container>

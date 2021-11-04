@@ -1,38 +1,47 @@
-/* .filmList {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center; 
-    gap: 15px;  
-}
-
-.filmList img {
-
-} */
-
-
 .banner, 
 .searchForm,
 .film-list1,
-.film-list2 {
+.film-list2,
+.addtoFavoritesBtn {
     display: flex;
     justify-content: center;
 }
 
-.favoritesList {
+html,
+.App {
+    background: url("https://i.imgur.com/w9fNuEX.jpeg")
+      no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  
+
+.MyFavorites {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 20px;
+}
+
+.singleFilm {
+    background-color: beige;
+    padding: 20px;
+}
+
+.film-list1,
+.film-list2{
+    background-color: beige;
+    padding: 5px;
 }
 
 .filmDetails {
     display: flex;
     align-self: center;
     flex-direction: column;
-}
-
-.addtoFavoritesBtn {
-    justify-content: center;
-    display: flex;
-
 }
 
 .film-list2 {
@@ -46,6 +55,14 @@
 .searchForm {
     margin: 20px;
 }
+
+input[type=text] {
+    width: 70%;
+    height: auto;
+    padding: 12px 20px;
+    /* margin: 8px 0; */
+    box-sizing: border-box;
+  }
 
 
 
@@ -62,7 +79,9 @@
     }
     .film-list2 {
         display: flex;
+        padding-top: 20px;
     }
+   
     
     
   }
