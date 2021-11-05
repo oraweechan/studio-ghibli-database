@@ -10,7 +10,7 @@ For this project, I plan to create a Studio Ghibli database. All movie details w
 
 ## Screenshots
 
-View in-app screenshots 
+View in-app screenshots:<br> 
 [Homepage](https://res.cloudinary.com/orawee/image/upload/v1636126672/StudioGhibli/Screen_Shot_2021-11-05_at_8.31.51_AM_fcadud.png)<br>
 [Homepage - Mobile](https://res.cloudinary.com/orawee/image/upload/v1636126671/StudioGhibli/Screen_Shot_2021-11-05_at_8.31.33_AM_l5oxso.png)<br>
 [Film Page](https://res.cloudinary.com/orawee/image/upload/v1636126672/StudioGhibli/Screen_Shot_2021-11-05_at_8.33.34_AM_qtbyni.png)<br>
