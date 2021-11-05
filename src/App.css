@@ -22,6 +22,10 @@ html,
     background-repeat: no-repeat;
   }
 
+  .searchForm {
+    margin: 20px;
+}
+
 .MyFavorites {
     display: flex;
     justify-content: center;
