@@ -4,14 +4,12 @@ import { Col, Row } from "react-bootstrap";
 import { Image } from "react-bootstrap";
 
 function SingleFilm(props) {
-  // console.log(props)
   const [film, setFilm] = useState({});
 
   const makeAPICall = () => {
     fetch(`https://ghibliapi.herokuapp.com/films/${props.filmId}`)
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data)
         setFilm(data);
       });
   };

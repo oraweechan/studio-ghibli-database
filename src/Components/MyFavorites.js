@@ -5,8 +5,6 @@ import Typography from "@mui/material/Typography";
 import Button from "react-bootstrap/Button";
 
 function MyFavorites(props) {
-  // console.log(props);
-
   let myFavoritesJSX = props.favorites.map((film, index) => {
     return (
       <div className="favoritesList" key={index}>
@@ -21,9 +19,6 @@ function MyFavorites(props) {
             <Typography gutterBottom variant="h5" component="div">
               {film.title}
             </Typography>
-            {/* <button onClick={() => props.removeFilm(index)}>
-              Remove from Favorites
-            </button> */}
             <Button onClick={() => props.removeFilm(index)}>
               Remove from Favorites
             </Button>

@@ -10,14 +10,18 @@ For this project, I plan to create a Studio Ghibli database. All movie details w
 
 ## Screenshots
 
-View in-app screenshots [TBD]().
+View in-app screenshots 
+[Homepage](https://res.cloudinary.com/orawee/image/upload/v1636126672/StudioGhibli/Screen_Shot_2021-11-05_at_8.31.51_AM_fcadud.png)
+[Homepage - Mobile](https://res.cloudinary.com/orawee/image/upload/v1636126671/StudioGhibli/Screen_Shot_2021-11-05_at_8.31.33_AM_l5oxso.png)
+[Film Page](https://res.cloudinary.com/orawee/image/upload/v1636126672/StudioGhibli/Screen_Shot_2021-11-05_at_8.33.34_AM_qtbyni.png)
+[Favorites Page](https://res.cloudinary.com/orawee/image/upload/v1636126673/StudioGhibli/Screen_Shot_2021-11-05_at_8.34.49_AM_otblhm.png)
 
 ## Installation
 
-To open the app, open the terminal window and go to the "studio-ghibli-database" directory and run `npm i` then `npm start`.
+To open the app, open the terminal window and go to the "studio-ghibli-database" directory and run `npm i` then `npm start`. Check out the deployment [Here](https://oraweechan.github.io/studio-ghibli-database/#/)
 
 ## How to use
-TBD
+Once opened, you can browse all films listed in the image grid by scrolling or search for a selected film by film title, director or, producer. Click on any film you wish to view more details. If you wish to favorite and save a film, click Add to Favorites. All saved favorites will be listed in the Favorites page.
 
 
 

@@ -72,26 +72,34 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Create Components| H | 6hrs| 0 | 0 |
-| Working with API | H | 3hrs| 0 | 0 |
-| Adding Save function | H | 2hrs| 0 | 0 |
-| Adding Remove function | H | 2hrs| 0 | 0 |
-| Styling of homepage| M | 5hrs| 0 | 0 |
-| Styling of individual page| M | 3hrs| 0 | 0 |
-| Styling of favorites page| M | 3hrs| 0 | 0 |
-| Adding Search | M | 3hrs| 0 | 0 |
-| Adding styling animations| L | 6hrs| 0 | 0 |
-| Total |  | 33hrs| 0hrs | 0hrs |
+| Create Components| H | 6hrs| 0 | 8hrs |
+| Working with API | H | 3hrs| 0 | 3hrs |
+| Adding Save function | H | 2hrs| 0 | 2hrs |
+| Adding Remove function | H | 2hrs| 0 | 1hr |
+| Styling of homepage| M | 5hrs| 0 | 5hrs |
+| Styling of individual page| M | 3hrs| 0 | 2hrs |
+| Styling of favorites page| M | 3hrs| 0 | 2hrs |
+| Adding Search | M | 3hrs| 0 | 5hrs |
+| Adding styling animations| L | 6hrs| 0 | 2hrs |
+| Total |  | 33hrs| 0hrs | 30hrs |
 
 ## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project such as Axios, ReactStrap, D3, etc. 
+ Used ReactStrap and MUI to format the layout and style components.
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  Code snippet should not be greater than 10 lines of code. 
+The functionality of the code below clears all typed input in the search field.
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+  const [clearInput, setClearInput] = useState("");
+
+  useEffect(() => {
+    makeAPICall();
+  }, [clearInput]);
+
+  const handleClearClick = () => {
+    setClearInput(0);
+    setSearchTerm("");
+    setSearchResults(filmList);
+  };
 ```

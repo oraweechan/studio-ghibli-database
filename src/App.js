@@ -1,10 +1,10 @@
-import Films from "./Films";
-import Header from "./Header";
+import Films from "./Components/Films";
+import Header from "./Components/Header";
 import { Route, Switch } from "react-router-dom";
-import MyFavorites from "./MyFavorites";
-import SingleFilm from "./SingleFilm";
+import MyFavorites from "./Components/MyFavorites";
+import SingleFilm from "./Components/SingleFilm";
 import React, { useState, useEffect } from "react";
-import Form from "./Form";
+import Form from "./Components/Form";
 import { Col, Container } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import "./App.css";
@@ -30,7 +30,6 @@ function App() {
   }, [clearInput]);
 
   const handleFilmClick = (film) => {
-    // console.log(film)
     setSelectedFilm(film);
   };
 
@@ -41,12 +40,10 @@ function App() {
   };
 
   const addToFavorites = (film) => {
-    // console.log(film);
     setFavoriteList([...favoriteList, film]);
   };
 
   const removeFromFavorites = (removeIndex) => {
-    // console.log(removeIndex)
     let newFavorites = favoriteList.filter((film, index) => {
       return index !== removeIndex;
     });
@@ -54,7 +51,6 @@ function App() {
   };
 
   const searchHandler = (searchTerm) => {
-    // console.log(searchTerm)
     setSearchTerm(searchTerm);
     if (searchTerm !== "") {
       const newFilmList = filmList.filter((film) => {

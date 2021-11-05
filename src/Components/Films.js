@@ -8,7 +8,6 @@ import { Col } from "react-bootstrap";
 import { Image } from "react-bootstrap";
 
 function Films(props) {
-  // console.log(props)
   return (
     <Col>
       <div key="film-list1" className="film-list1">

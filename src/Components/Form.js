@@ -5,7 +5,6 @@ import { ClearAllRounded } from "@mui/icons-material";
 
 function Form(props) {
   const getSearchTerm = () => {
-    // console.log(inputEl.current.value);
     props.searchKeyword(inputEl.current.value);
   };
   const inputEl = useRef("");
@@ -21,7 +20,6 @@ function Form(props) {
         </div>
         <div className="searchForm">
           <input
-            
             ref={inputEl}
             type="text"
             placeholder="Search Films"
