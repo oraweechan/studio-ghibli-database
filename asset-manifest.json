@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/studio-ghibli-database/static/css/main.0d82edaa.chunk.css",
+    "main.css": "/studio-ghibli-database/static/css/main.96350be7.chunk.css",
     "main.js": "/studio-ghibli-database/static/js/main.1d3a8622.chunk.js",
     "main.js.map": "/studio-ghibli-database/static/js/main.1d3a8622.chunk.js.map",
     "runtime-main.js": "/studio-ghibli-database/static/js/runtime-main.e8209e73.js",
@@ -10,14 +10,14 @@
     "static/js/2.bcf587fd.chunk.js.map": "/studio-ghibli-database/static/js/2.bcf587fd.chunk.js.map",
     "index.html": "/studio-ghibli-database/index.html",
     "static/css/2.8c0e6b67.chunk.css.map": "/studio-ghibli-database/static/css/2.8c0e6b67.chunk.css.map",
-    "static/css/main.0d82edaa.chunk.css.map": "/studio-ghibli-database/static/css/main.0d82edaa.chunk.css.map",
+    "static/css/main.96350be7.chunk.css.map": "/studio-ghibli-database/static/css/main.96350be7.chunk.css.map",
     "static/js/2.bcf587fd.chunk.js.LICENSE.txt": "/studio-ghibli-database/static/js/2.bcf587fd.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e8209e73.js",
     "static/css/2.8c0e6b67.chunk.css",
     "static/js/2.bcf587fd.chunk.js",
-    "static/css/main.0d82edaa.chunk.css",
+    "static/css/main.96350be7.chunk.css",
     "static/js/main.1d3a8622.chunk.js"
   ]
 }
